@@ -15,7 +15,7 @@ import com.entities.Act;
  */
 @RestController
 @RequestMapping("/act")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
 public class ActController extends ControllerImpl<Act>  {
 
 }

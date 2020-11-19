@@ -20,7 +20,7 @@ public class DaoServiceImpl<O> implements DaoService<O> {
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	dao.deleteById(id);
 		
 	}
 
