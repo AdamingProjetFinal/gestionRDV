@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,5 +30,9 @@ public class Role {
 	@Column(name = "DESCRIPTION")
 	private String description;
 	
-	List<Utilisateur> utilisateur;
+	@ManyToMany
+	@JoinTable(name = "Role_Utilisateur", 
+		joinColumns = @JoinColumn(name = "ROLE_ID"),
+		inverseJoinColumns = @JoinColumn(name = "UTILISATEUR_ID"))
+	List<Utilisateur> utilisateurs;
 }

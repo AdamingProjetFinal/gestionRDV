@@ -2,6 +2,7 @@ package com.toto;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
@@ -11,7 +12,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.ManyToAny;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,6 +30,7 @@ import lombok.NoArgsConstructor;
 @DiscriminatorColumn(name = "user_type")
 public class Utilisateur implements Serializable {
 
+	// Attributs
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_USER")
@@ -48,4 +53,8 @@ public class Utilisateur implements Serializable {
 	protected Date dateNaissance;
 	@Column(name = "TELEPHONE")
 	protected String telephone;
+	
+	// Associations
+	@ManyToMany(mappedBy = "utilisateurs")
+	protected List<Role> roles;
 }
