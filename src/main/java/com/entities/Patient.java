@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@DiscriminatorValue(value = "Patient")
+@DiscriminatorValue(value = "PAT")
 public class Patient extends Utilisateur {
 
 	// Attributs
@@ -37,8 +37,8 @@ public class Patient extends Utilisateur {
 	private Adresse adresse;
 	
 	@ManyToOne
-	@JoinColumn(name = "UTILISATEUR_ID", referencedColumnName = "ID_UTILISATEUR")
-	private Medecin medecinTraitant;
+	@JoinColumn(name = "MEDECIN_ID", referencedColumnName = "ID_UTILISATEUR")
+	private Medecin medecin;
 	
 	@OneToMany(mappedBy = "patient", cascade = CascadeType.REMOVE)
 	private List<FicheMedicale> fichesMedicales;

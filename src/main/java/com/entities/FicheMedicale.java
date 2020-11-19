@@ -39,7 +39,7 @@ public class FicheMedicale implements Serializable {
 	
 	// Association
 	@ManyToOne
-	@JoinColumn(name = "UTILISATEUR_ID", referencedColumnName = "ID_UTILISATEUR")
+	@JoinColumn(name = "PATIENT_ID", referencedColumnName = "ID_UTILISATEUR")
 	private Patient patient;
 
 }
