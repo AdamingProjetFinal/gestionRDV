@@ -1,4 +1,4 @@
-package com.toto;
+package com.entities;
 
 import java.util.List;
 
