@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
  *
  */
 @RestController
-@RequestMapping("/ficheMedicale")
-@CrossOrigin("*")
-public class FicheMediacaleController {
+@RequestMapping("/role")
+@CrossOrigin(origins = "*")
+public class RoleController {
 
 }
