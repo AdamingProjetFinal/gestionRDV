@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.entities.Medecin;
+
 /**
  * @author Tony
  *
@@ -14,6 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/medecin")
 @RestController
 @CrossOrigin(origins = "*")
-public class MedecinController {
+public class MedecinController extends ControllerImpl<Medecin>{
 
 }
