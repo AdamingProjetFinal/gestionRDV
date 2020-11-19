@@ -29,7 +29,7 @@ public class Patient extends Utilisateur {
 	private Adresse adresse;
 	
 	@ManyToOne
-	@JoinColumn(name = "MEDECIN_ID", referencedColumnName = "ID_MEDECIN")
+	@JoinColumn(name = "UTILISATEUR_ID", referencedColumnName = "ID_UTILISATEUR")
 	private Medecin medecinTraitant;
 	
 	// private List<FicheMedicale> fichesMedicales;
