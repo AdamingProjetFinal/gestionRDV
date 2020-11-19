@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,11 +31,15 @@ import lombok.ToString;
 public class FicheMedicale implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID_F")
+	@Column(name = "ID_FICHE")
 	private Long id;
 	private ZonedDateTime date;
 	private String antecedents;
 	private String observations;
-	// relation avec patient;
+	
+	// Association
+	@ManyToOne
+	@JoinColumn(name = "UTILISATEUR_ID", referencedColumnName = "ID_UTILISATEUR")
+	private Patient patient;
 
 }
