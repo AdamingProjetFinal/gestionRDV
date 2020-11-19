@@ -32,6 +32,7 @@ public class Patient extends Utilisateur {
 	@JoinColumn(name = "UTILISATEUR_ID", referencedColumnName = "ID_UTILISATEUR")
 	private Medecin medecinTraitant;
 	
+	
 	// private List<FicheMedicale> fichesMedicales;
 	// private List<Consultation> consultations;
 }

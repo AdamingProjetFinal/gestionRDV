@@ -25,7 +25,6 @@ public class Medecin extends Utilisateur {
 	@Column(name = "N°PUBLIC")
 	private String codePublic;
 	
-	
 	// Associations
 	@Embedded
 	private Adresse adresse;
@@ -36,4 +35,6 @@ public class Medecin extends Utilisateur {
 	
 	@OneToMany(mappedBy = "medecin", cascade = CascadeType.REMOVE)
 	private List<Consultation> consultations;
+	
+	//Patient en mono directionnel, pas de variable
 }

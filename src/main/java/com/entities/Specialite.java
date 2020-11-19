@@ -27,6 +27,7 @@ public class Specialite {
 	@Column(name = "NOM")
 	private String nom;
 	
+	// Associations
 	@OneToMany(mappedBy = "specialite", cascade = CascadeType.REMOVE)
 	List<Medecin> medecins;
 }
