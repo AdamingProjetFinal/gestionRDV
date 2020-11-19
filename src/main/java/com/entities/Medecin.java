@@ -24,7 +24,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@DiscriminatorValue(value = "Medecin")
+@DiscriminatorValue(value = "MED")
 public class Medecin extends Utilisateur {
 
 	@Column(name = "N°PUBLIC")
@@ -41,5 +41,6 @@ public class Medecin extends Utilisateur {
 	@OneToMany(mappedBy = "medecin", cascade = CascadeType.REMOVE)
 	private List<Consultation> consultations;
 	
-	//Patient en mono directionnel, pas de variable
+	@OneToMany(mappedBy = "medecin", cascade = CascadeType.REMOVE)
+	private List<Patient> patients;
 }

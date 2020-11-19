@@ -41,18 +41,16 @@ public class Consultation implements Serializable{
 	private Long id;
 	private ZonedDateTime date;
 	private String note;
-	private Long idMedecin;
-	private Long idPatient;
 	private boolean deplacement;
-	private Boolean validationMedecin;
+	private boolean validationMedecin;
 
 	// Association
 	@ManyToOne
-	@JoinColumn(name = "UTILISATEUR_ID", referencedColumnName = "ID_UTILISATEUR")
+	@JoinColumn(name = "MEDECIN_ID", referencedColumnName = "ID_UTILISATEUR")
 	private Medecin medecin;
 	
 	@ManyToOne
-	@JoinColumn(name = "UTILISATEUR_ID", referencedColumnName = "ID_UTILISATEUR")
+	@JoinColumn(name = "PATIENT_ID", referencedColumnName = "ID_UTILISATEUR")
 	private Patient patient;
 	
 	@ManyToMany(mappedBy = "consultations")
