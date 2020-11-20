@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -36,6 +38,7 @@ public class Patient extends Utilisateur {
 	@Embedded
 	private Adresse adresse;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "MEDECIN_ID", referencedColumnName = "ID_UTILISATEUR")
 	private Medecin medecin;

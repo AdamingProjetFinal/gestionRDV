@@ -18,6 +18,8 @@ import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.ManyToAny;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,7 +30,7 @@ import lombok.ToString;
  *
  */
 
-@Data
+
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
@@ -55,4 +57,130 @@ public class Consultation implements Serializable{
 	
 	@ManyToMany(mappedBy = "consultations")
 	private List<Act> acts;
+
+	/**
+	 * @return the id
+	 * @author:tony
+	 */
+	public Long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	/**
+	 * @return the date
+	 * @author:tony
+	 */
+	public ZonedDateTime getDate() {
+		return date;
+	}
+
+	/**
+	 * @param date the date to set
+	 */
+	public void setDate(ZonedDateTime date) {
+		this.date = date;
+	}
+
+	/**
+	 * @return the note
+	 * @author:tony
+	 */
+	public String getNote() {
+		return note;
+	}
+
+	/**
+	 * @param note the note to set
+	 */
+	public void setNote(String note) {
+		this.note = note;
+	}
+
+	/**
+	 * @return the deplacement
+	 * @author:tony
+	 */
+	public boolean isDeplacement() {
+		return deplacement;
+	}
+
+	/**
+	 * @param deplacement the deplacement to set
+	 */
+	public void setDeplacement(boolean deplacement) {
+		this.deplacement = deplacement;
+	}
+
+	/**
+	 * @return the validationMedecin
+	 * @author:tony
+	 */
+	public boolean isValidationMedecin() {
+		return validationMedecin;
+	}
+
+	/**
+	 * @param validationMedecin the validationMedecin to set
+	 */
+	public void setValidationMedecin(boolean validationMedecin) {
+		this.validationMedecin = validationMedecin;
+	}
+
+	/**
+	 * @return the medecin
+	 * @author:tony
+	 */
+	@JsonIgnoreProperties({"consultations"})
+	public Medecin getMedecin() {
+		return medecin;
+	}
+
+	/**
+	 * @param medecin the medecin to set
+	 */
+	public void setMedecin(Medecin medecin) {
+		this.medecin = medecin;
+	}
+
+	/**
+	 * @return the patient
+	 * @author:tony
+	 */
+	@JsonIgnoreProperties({"consultations"})
+	public Patient getPatient() {
+		return patient;
+	}
+
+	/**
+	 * @param patient the patient to set
+	 */
+	public void setPatient(Patient patient) {
+		this.patient = patient;
+	}
+
+	/**
+	 * @return the acts
+	 * @author:tony
+	 */
+	public List<Act> getActs() {
+		return acts;
+	}
+
+	/**
+	 * @param acts the acts to set
+	 */
+	public void setActs(List<Act> acts) {
+		this.acts = acts;
+	}
+	
+	
+	
+	
 }

@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,6 +35,7 @@ public class Specialite {
 	private String nom;
 	
 	// Associations
+	@JsonIgnore
 	@OneToMany(mappedBy = "specialite", cascade = CascadeType.REMOVE)
 	List<Medecin> medecins;
 }
