@@ -55,6 +55,6 @@ public class Utilisateur implements Serializable {
 	protected String telephone;
 	
 	// Associations
-	@ManyToMany(mappedBy = "utilisateurs")
+	@ManyToMany
 	protected List<Role> roles;
 }
