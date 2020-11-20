@@ -56,8 +56,9 @@ public class ControllerImpl<O> implements Icontroller<O>{
 		} catch (EntityNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			response.put("status", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		response.put("status", HttpStatus.INTERNAL_SERVER_ERROR);
+		
 		return response;
 	}
 
