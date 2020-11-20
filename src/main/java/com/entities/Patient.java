@@ -30,7 +30,7 @@ public class Patient extends Utilisateur {
 
 	// Attributs
 	@Column(name = "NUMERO_SECU")
-	private Long numeroSecu;
+	private String numeroSecu;
 	
 	// Associations 
 	@Embedded
