@@ -14,6 +14,7 @@ import javax.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /**
  * @author Damy
@@ -25,6 +26,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @DiscriminatorValue(value = "MED")
+@ToString(callSuper=true)
 public class Medecin extends Utilisateur {
 
 	@Column(name = "N°PUBLIC")
