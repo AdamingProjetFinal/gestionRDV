@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -43,6 +45,7 @@ public class Medecin extends Utilisateur {
 	@OneToMany(mappedBy = "medecin", cascade = CascadeType.REMOVE)
 	private List<Consultation> consultations;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "medecin", cascade = CascadeType.REMOVE)
 	private List<Patient> patients;
 }

@@ -40,7 +40,6 @@ public class Patient extends Utilisateur {
 	@Embedded
 	private Adresse adresse;
 	
-	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "MEDECIN_ID", referencedColumnName = "ID_UTILISATEUR")
 	private Medecin medecin;
