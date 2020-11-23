@@ -13,5 +13,10 @@ import com.entities.Patient;
  */
 @Repository
 public interface PatientRepository extends DaoRepository<Patient> {
-
+	/**
+	 * @author Florian
+	 * @param email	
+	 *
+	 */
+	public Patient findByEmail(String email);
 }

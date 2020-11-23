@@ -1,5 +1,6 @@
 package com.entities;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -11,9 +12,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 /**
@@ -21,12 +26,12 @@ import lombok.ToString;
  *
  */
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @DiscriminatorValue(value = "MED")
-@ToString(callSuper=true)
 public class Medecin extends Utilisateur {
 
 	@Column(name = "N°PUBLIC")
@@ -43,6 +48,17 @@ public class Medecin extends Utilisateur {
 	@OneToMany(mappedBy = "medecin", cascade = CascadeType.REMOVE)
 	private List<Consultation> consultations;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "medecin", cascade = CascadeType.REMOVE)
 	private List<Patient> patients;
+
+	@Override
+	public String toString() {
+		return "Medecin [codePublic=" + codePublic + ", adresse=" + adresse + ", specialite=" + specialite + ", id="
+				+ id + ", username=" + username + ", password=" + password + ", actived=" + actived + ", nom=" + nom
+				+ ", prenom=" + prenom + ", email=" + email + ", photo=" + Arrays.toString(photo) + ", dateNaissance="
+				+ dateNaissance + ", telephone=" + telephone + "]";
+	}
+	
+	
 }

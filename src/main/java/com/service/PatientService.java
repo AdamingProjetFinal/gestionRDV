@@ -10,5 +10,6 @@ import com.entities.Patient;
  *
  */
 public interface PatientService extends DaoService<Patient> {
+	public Patient findPatientByEmail(String email);
 
 }
