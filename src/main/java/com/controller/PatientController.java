@@ -34,14 +34,13 @@ public class PatientController extends ControllerImpl<Patient> {
 	
 	@GetMapping("/email/{email}")
 	public Map<String, Object> findByEmail(@PathVariable("email") String email) {
-		log.info("Recherche de l'objet avec l'id : " + email);
+		log.info("Recherche de le patient avec l'email : " + email);
 		Map<String, Object> response = new HashMap<String, Object>();
 		Patient p = service.findPatientByEmail(email);
-		log.info("Objet trouvé : " + p.toString());
+		log.info("Patient trouvé : " + p.toString());
 		response.put("status", HttpStatus.FOUND);
 		response.put("data", p); 
 		log.info("Retour de la requête : " + response.toString());
 		return response;
 	}
-
 }
