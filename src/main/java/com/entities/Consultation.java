@@ -45,6 +45,7 @@ public class Consultation implements Serializable{
 	private String note;
 	private boolean deplacement;
 	private boolean validationMedecin;
+	private int dureeConsultation;
 
 	// Association
 	@ManyToOne
@@ -178,6 +179,21 @@ public class Consultation implements Serializable{
 	 */
 	public void setActs(List<Act> acts) {
 		this.acts = acts;
+	}
+
+	/**
+	 * @return the dureeConsultation
+	 * @author:tony
+	 */
+	public int getDureeConsultation() {
+		return dureeConsultation;
+	}
+
+	/**
+	 * @param dureeConsultation the dureeConsultation to set
+	 */
+	public void setDureeConsultation(int dureeConsultation) {
+		this.dureeConsultation = dureeConsultation;
 	}
 	
 	

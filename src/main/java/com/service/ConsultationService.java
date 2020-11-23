@@ -3,6 +3,10 @@
  */
 package com.service;
 
+import java.util.List;
+
+
+
 import com.entities.Consultation;
 
 /**
@@ -10,5 +14,9 @@ import com.entities.Consultation;
  *
  */
 public interface ConsultationService extends DaoService<Consultation> {
+	
+	List<Consultation> findByIdMedecin(Long id);
+	
+
 
 }

@@ -3,6 +3,9 @@
  */
 package com.service;
 
+import java.util.List;
+
+import com.entities.Consultation;
 import com.entities.Medecin;
 
 /**
@@ -10,5 +13,5 @@ import com.entities.Medecin;
  *
  */
 public interface MedecinService extends DaoService<Medecin> {
-
+	
 }
