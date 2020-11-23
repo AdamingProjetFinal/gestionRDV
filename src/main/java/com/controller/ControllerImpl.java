@@ -9,13 +9,11 @@ import java.util.Map;
 
 import javax.persistence.EntityNotFoundException;
 
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 
 import com.service.DaoService;
 
-import javassist.NotFoundException;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -30,24 +28,23 @@ public class ControllerImpl<O> implements Icontroller<O>{
 
 	@Override
 	public Map<String, Object> save(O o) {
-		log.info("Sauvegarde d'un objet de type : " + o.getClass());
-		log.info("Objet : " + o);
+		log.info("Sauvegarde d'un objet de type : " + o.getClass()); 
+		log.info("Objet : " + o); 
 		Map<String, Object> response = new HashMap<String, Object>();
 		response.put("status", HttpStatus.OK);
 		response.put("data",service.saveOrUpdate(o));
 		log.info("Retour de la requête save: " + response.toString());
-		
 		return response;
 	}
 
 	@Override
 	public Map<String, Object> update(O o) {
-		log.info("Mise à jour d'un objet de type : " + o.getClass());
-		log.info("Objet : " + o);
+		log.info("Mise à jour d'un objet de type : " + o.getClass()); 
+		log.info("Objet : " + o); 
 		Map<String, Object> response = new HashMap<String, Object>();
 		response.put("status", HttpStatus.OK);
 		response.put("data", service.saveOrUpdate(o));
-		log.info("Retour de la requête update : " + response.toString());
+		log.info("Retour de la requête update : " + response.toString()); 
 		return response;
 	}
 
