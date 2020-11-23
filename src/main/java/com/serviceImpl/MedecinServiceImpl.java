@@ -3,8 +3,6 @@
  */
 package com.serviceImpl;
 
-import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,5 +19,16 @@ import com.service.MedecinService;
 @Service
 public class MedecinServiceImpl  extends DaoServiceImpl<Medecin> implements MedecinService{
 
+	@Autowired
+	MedecinRepository dao;
+	/**
+	 * @author Florian
+	 * @param email
+	 *
+	 */
+	@Override
+	public Medecin findMedecinByEmail(String email) {
+		return dao.findByEmail(email);
+	}
 
 }

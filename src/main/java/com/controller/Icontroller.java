@@ -21,16 +21,54 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping
 public interface Icontroller<O> {
 	
+	/**
+	 * 
+	 * Methode save exposee 
+	 * @param obj : une entitee generique 
+	 * @return Map: Map&#60String, Object&#62
+	 * 
+	 */
 	@PostMapping
 	Map<String, Object> save(@RequestBody O obj);
+	
+	/**
+	 * 
+	 * Methode update exposee 
+	 * @param obj : une entitee generique 
+	 * @return Map: Map&#60String, Object&#62
+	 * 
+	 */
 	@PutMapping
 	Map<String, Object> update(@RequestBody O obj);
+	
+	/**
+	 * 
+	 * Methode delete exposee 
+	 * @param id : l'id de l'élément à supprimer
+	 * @return Map: Map&#60String, Object&#62
+	 * 
+	 */
 	@DeleteMapping("/{id}")
 	Map<String, Object> delete(@PathVariable("id")Long id);
+	
+	/**
+	 * 
+	 * Methode find exposee 
+	 * @param id : l'id de l'élément à trouver
+	 * @return Map: Map&#60String, Object&#62
+	 * 
+	 */
 	@GetMapping("/{id}")
 	Map<String, Object> find(@PathVariable("id")Long id);
+	
+	/**
+	 * 
+	 * Methode findAll exposee 
+	 * @return List: list d'objet 
+	 * 
+	 */
 	@GetMapping("/all")
-	List<O>findAll();
+	List<O> findAll();
 	
 
 }

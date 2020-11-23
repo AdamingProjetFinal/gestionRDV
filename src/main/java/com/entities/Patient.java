@@ -1,6 +1,7 @@
 package com.entities;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -16,14 +17,18 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 /**
  * @author Damy
  *
  */
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -32,13 +37,12 @@ public class Patient extends Utilisateur {
 
 	// Attributs
 	@Column(name = "NUMERO_SECU")
-	private Long numeroSecu;
+	private String numeroSecu;
 	
 	// Associations 
 	@Embedded
 	private Adresse adresse;
 	
-	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "MEDECIN_ID", referencedColumnName = "ID_UTILISATEUR")
 	private Medecin medecin;
@@ -48,4 +52,15 @@ public class Patient extends Utilisateur {
 	
 	@OneToMany(mappedBy = "patient", cascade = CascadeType.REMOVE)
 	private List<Consultation> consultations;
+
+	@Override
+	public String toString() {
+		return "Patient [numeroSecu=" + numeroSecu + ", adresse=" + adresse + ", medecin=" + medecin
+				+ ", fichesMedicales=" + fichesMedicales + ", consultations=" + consultations + ", id=" + id
+				+ ", username=" + username + ", password=" + password + ", actived=" + actived + ", nom=" + nom
+				+ ", prenom=" + prenom + ", email=" + email + ", photo=" + Arrays.toString(photo) + ", dateNaissance="
+				+ dateNaissance + ", telephone=" + telephone + "]";
+	}
+	
+	
 }
