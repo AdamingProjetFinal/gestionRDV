@@ -33,6 +33,7 @@ public class ControllerImpl<O> implements Icontroller<O>{
 		Map<String, Object> response = new HashMap<String, Object>();
 		response.put("status", HttpStatus.OK);
 		response.put("data",service.saveOrUpdate(o));
+		log.info("Retour de la requête save: " + response.toString());
 		return response;
 	}
 
