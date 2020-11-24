@@ -1,5 +1,6 @@
 package com.entities;
 
+import java.sql.Date;
 import java.util.Arrays;
 import java.util.List;
 
@@ -28,8 +29,8 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @DiscriminatorValue(value = "MED")
 public class Medecin extends Utilisateur {
