@@ -50,13 +50,14 @@ public class Patient extends Utilisateur {
 	@OneToMany(mappedBy = "patient", cascade = CascadeType.REMOVE)
 	private List<FicheMedicale> fichesMedicales;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "patient", cascade = CascadeType.REMOVE)
 	private List<Consultation> consultations;
 
 	@Override
 	public String toString() {
 		return "Patient [numeroSecu=" + numeroSecu + ", adresse=" + adresse + ", medecin=" + medecin
-				+ ", fichesMedicales=" + fichesMedicales + ", consultations=" + consultations + ", id=" + id
+				+ ", fichesMedicales=" + fichesMedicales + ", id=" + id
 				+ ", username=" + username + ", password=" + password + ", actived=" + actived + ", nom=" + nom
 				+ ", prenom=" + prenom + ", email=" + email + ", photo=" + Arrays.toString(photo) + ", dateNaissance="
 				+ dateNaissance + ", telephone=" + telephone + "]";

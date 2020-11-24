@@ -45,6 +45,7 @@ public class Medecin extends Utilisateur {
 	@JoinColumn(name = "SPECIALITE_ID", referencedColumnName = "ID_SPECIALITE")
 	private Specialite specialite;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "medecin", cascade = CascadeType.REMOVE)
 	private List<Consultation> consultations;
 	
