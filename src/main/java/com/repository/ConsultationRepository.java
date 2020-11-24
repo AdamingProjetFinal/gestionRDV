@@ -18,6 +18,9 @@ import com.entities.Consultation;
 @Repository
 public interface ConsultationRepository extends DaoRepository<Consultation> {
 
-@Query("SELECT c FROM Consultation as c WHERE medecin_id =:idMedecin")
-List<Consultation> getConsultationsByIdMedecin( @Param("idMedecin") Long id);
+	@Query("SELECT c FROM Consultation as c WHERE medecin_id =:idMedecin")
+	List<Consultation> getConsultationsByIdMedecin( @Param("idMedecin") Long id);
+	
+	@Query("SELECT c FROM Consultation as c WHERE patient_id =:idPatient")
+	List<Consultation> getConsultationsByIdPatient( @Param("idPatient") Long id);
 }

@@ -35,6 +35,7 @@ public class FicheMedicale implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_FICHE")
 	private Long id;
+	private String nom;
 	private ZonedDateTime date;
 	private String antecedents;
 	private String observations;

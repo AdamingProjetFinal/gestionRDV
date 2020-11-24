@@ -24,8 +24,12 @@ public class ConsultationServiceImpl extends DaoServiceImpl<Consultation> implem
 
 	@Override
 	public List<Consultation> findByIdMedecin(Long id) {
-	
 		return dao.getConsultationsByIdMedecin(id);
+	}
+
+	@Override
+	public List<Consultation> findByIdPatient(Long id) {
+		return dao.getConsultationsByIdPatient(id);
 	}
 
 }

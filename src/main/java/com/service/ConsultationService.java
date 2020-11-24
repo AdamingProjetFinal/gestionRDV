@@ -17,6 +17,6 @@ public interface ConsultationService extends DaoService<Consultation> {
 	
 	List<Consultation> findByIdMedecin(Long id);
 	
-
+	List<Consultation> findByIdPatient(Long id);
 
 }

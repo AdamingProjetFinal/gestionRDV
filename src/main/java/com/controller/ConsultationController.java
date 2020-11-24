@@ -31,5 +31,10 @@ public class ConsultationController extends ControllerImpl<Consultation>{
 	List<Consultation> getByIdMedecin(@PathVariable("id") Long id ){
 		return service.findByIdMedecin(id);
 	}
+	
+	@GetMapping("/getByIdPatient/{id}")
+	List<Consultation> getByIdPatient(@PathVariable("id") Long id ){
+		return service.findByIdPatient(id);
+	}
 
 }
