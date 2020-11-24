@@ -30,6 +30,8 @@ import lombok.NoArgsConstructor;
 @DiscriminatorColumn(name = "user_type")
 public class Utilisateur implements Serializable {
 
+
+
 	// Attributs
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
