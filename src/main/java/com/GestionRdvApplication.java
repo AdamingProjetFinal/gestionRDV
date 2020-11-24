@@ -19,12 +19,14 @@ import org.springframework.context.annotation.Bean;
 
 import com.entities.Act;
 import com.entities.Consultation;
+import com.entities.FicheMedicale;
 import com.entities.Medecin;
 import com.entities.Patient;
 import com.entities.Specialite;
 import com.entities.Utilisateur;
 import com.service.ActService;
 import com.service.ConsultationService;
+import com.service.FicheMedicaleService;
 import com.service.MedecinService;
 import com.service.PatientService;
 import com.service.SpecialiteService;
@@ -48,6 +50,7 @@ public class GestionRdvApplication {
 			MedecinService medecinService,
 			PatientService patientService,
 			ActService actService,
+			FicheMedicaleService ficheService,
 			ConsultationService consultationService) {
 		Specialite s1 = new Specialite(null, "Dentiste", null);
 		Specialite s2 = new Specialite(null, "Orthophoniste", null);
@@ -90,6 +93,11 @@ public class GestionRdvApplication {
 		Consultation c14 = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, 11, 28), LocalTime.of(14, 00), ZoneId.of("Europe/Paris") ), "visite médicale", false, false, 60, m2, p4, null);
 		Consultation c15 = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, 11, 29), LocalTime.of(13, 00), ZoneId.of("Europe/Paris") ), "visite médicale", false, true, 30, m2, p4, null);
 		Consultation c16 = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, 11, 15), LocalTime.of(15, 00), ZoneId.of("Europe/Paris") ), "visite médicale", false, false, 60, m2, p4, null);
+		FicheMedicale f1 = new FicheMedicale(null, "fiche médicale du patient", ZonedDateTime.of(LocalDate.of(2020, 11, 27), LocalTime.of(10, 00), ZoneId.of("Europe/Paris") ), "antécédent", "observations", p1);
+		FicheMedicale f2 = new FicheMedicale(null, "fiche médicale du patient", ZonedDateTime.of(LocalDate.of(2020, 11, 27), LocalTime.of(10, 00), ZoneId.of("Europe/Paris") ), "antécédent", "observations", p2);
+		FicheMedicale f3 = new FicheMedicale(null, "fiche médicale du patient", ZonedDateTime.of(LocalDate.of(2020, 11, 27), LocalTime.of(10, 00), ZoneId.of("Europe/Paris") ), "antécédent", "observations", p3);
+		FicheMedicale f4 = new FicheMedicale(null, "fiche médicale du patient", ZonedDateTime.of(LocalDate.of(2020, 11, 27), LocalTime.of(10, 00), ZoneId.of("Europe/Paris") ), "antécédent", "observations", p4);
+		FicheMedicale f5 = new FicheMedicale(null, "fiche médicale du patient", ZonedDateTime.of(LocalDate.of(2020, 11, 27), LocalTime.of(10, 00), ZoneId.of("Europe/Paris") ), "antécédent", "observations", p5);
 		Act a1 = new Act(null, "Tamponnement nasal antérieur", 25.50f, null);
 		Act a2 = new Act(null, "Prélèvement de sang artériel, par voie transcutanée", 25.50f, null);
 		Act a3 = new Act(null, "Anesthésie rachidienne au cours d'un accouchement par voie basse", 50.50f, null);
@@ -100,6 +108,7 @@ public class GestionRdvApplication {
 			Stream.of(m1,m2,m3,m4,m5).forEach( item ->medecinService.saveOrUpdate( item ) );
 			Stream.of(p1,p2,p3,p4,p5).forEach( item ->patientService.saveOrUpdate( item ) );
 			Stream.of(a1,a2,a3,a4,a5).forEach( item ->actService.saveOrUpdate( item ) );
+			Stream.of(f1,f2,f3,f4,f5).forEach( item ->ficheService.saveOrUpdate( item ) );
 			Stream.of(c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16).forEach( item ->consultationService.saveOrUpdate( item ) );
 			specialiteservice.findAll().forEach(System.out::println);
 		};
