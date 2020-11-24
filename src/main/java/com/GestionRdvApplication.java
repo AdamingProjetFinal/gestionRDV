@@ -46,7 +46,7 @@ public class GestionRdvApplication {
 	}
 	
 	@Bean
-	CommandLineRunner specialite( SpecialiteService specialiteservice,
+	CommandLineRunner start( SpecialiteService specialiteservice,
 			MedecinService medecinService,
 			PatientService patientService,
 			ActService actService,
@@ -82,13 +82,13 @@ public class GestionRdvApplication {
 		Consultation c3 = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, 11, 27), LocalTime.of(11, 00), ZoneId.of("Europe/Paris") ), "RAS", false, false, 60, m1, p3, null);
 		Consultation c4 = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, 11, 27), LocalTime.of(14, 00), ZoneId.of("Europe/Paris") ), "OK", false, false, 60, m1, p4, null);
 		Consultation c5 = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, 11, 27), LocalTime.of(15, 00), ZoneId.of("Europe/Paris") ), "visite médicale", false, false, 60, m2, p4, null);
-		Consultation c6 = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, 11, 27), LocalTime.of(16, 00), ZoneId.of("Europe/Paris") ), "visite médicale", false, true, 60, m2, p4, null);
-		Consultation c7 = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, 11, 20), LocalTime.of(14, 00), ZoneId.of("Europe/Paris") ), "visite médicale", false, false, 60, m2, p4, null);
-		Consultation c8 = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, 11, 19), LocalTime.of(10, 00), ZoneId.of("Europe/Paris") ), "visite médicale", false, true, 30, m2, p4, null);
+		Consultation c6 = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, 11, 27), LocalTime.of(16, 00), ZoneId.of("Europe/Paris") ), "visite médicale", false, true, 60, m3, p4, null);
+		Consultation c7 = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, 11, 20), LocalTime.of(14, 00), ZoneId.of("Europe/Paris") ), "visite médicale", false, false, 60, m3, p4, null);
+		Consultation c8 = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, 11, 19), LocalTime.of(10, 00), ZoneId.of("Europe/Paris") ), "visite médicale", false, true, 30, m4, p4, null);
 		Consultation c9 = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, 11, 20), LocalTime.of(15, 00), ZoneId.of("Europe/Paris") ), "visite médicale", false, false, 60, m2, p4, null);
-		Consultation c10 = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, 11, 28), LocalTime.of(11, 00), ZoneId.of("Europe/Paris") ), "visite médicale", false, false, 30, m2, p4, null);
-		Consultation c11 = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, 11, 30), LocalTime.of(15, 00), ZoneId.of("Europe/Paris") ), "visite médicale", false, true, 60, m2, p4, null);
-		Consultation c12 = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, 11, 28), LocalTime.of(9, 00), ZoneId.of("Europe/Paris") ), "visite médicale", false, true, 30, m2, p4, null);
+		Consultation c10 = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, 11, 28), LocalTime.of(11, 00), ZoneId.of("Europe/Paris") ), "visite médicale", false, false, 30, m5, p4, null);
+		Consultation c11 = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, 11, 30), LocalTime.of(15, 00), ZoneId.of("Europe/Paris") ), "visite médicale", false, true, 60, m3, p4, null);
+		Consultation c12 = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, 11, 28), LocalTime.of(9, 00), ZoneId.of("Europe/Paris") ), "visite médicale", false, true, 30, m5, p4, null);
 		Consultation c13 = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, 11, 28), LocalTime.of(16, 00), ZoneId.of("Europe/Paris") ), "visite médicale", false, false, 60, m2, p4, null);
 		Consultation c14 = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, 11, 28), LocalTime.of(14, 00), ZoneId.of("Europe/Paris") ), "visite médicale", false, false, 60, m2, p4, null);
 		Consultation c15 = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, 11, 29), LocalTime.of(13, 00), ZoneId.of("Europe/Paris") ), "visite médicale", false, true, 30, m2, p4, null);
