@@ -53,7 +53,7 @@ public class Consultation implements Serializable{
 	@JoinColumn(name = "MEDECIN_ID", referencedColumnName = "ID_UTILISATEUR")
 	private Medecin medecin;
 	
-	@JsonIgnore
+	
 	@ManyToOne
 	@JoinColumn(name = "PATIENT_ID", referencedColumnName = "ID_UTILISATEUR")
 	private Patient patient;
