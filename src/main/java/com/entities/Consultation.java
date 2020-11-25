@@ -47,7 +47,10 @@ public class Consultation implements Serializable{
 	private boolean deplacement;
 	private boolean validationMedecin;
 	private int dureeConsultation;
-
+	@Column(name = "PRIX_TTC")
+	private double prixTTC;
+	
+	
 	// Association
 	@ManyToOne
 	@JoinColumn(name = "MEDECIN_ID", referencedColumnName = "ID_UTILISATEUR")
@@ -58,9 +61,6 @@ public class Consultation implements Serializable{
 	@JoinColumn(name = "PATIENT_ID", referencedColumnName = "ID_UTILISATEUR")
 	private Patient patient;
 	
-	@ManyToMany(mappedBy = "consultations")
-	private List<Act> acts;
-
 	/**
 	 * @return the id
 	 * @author:tony
@@ -166,21 +166,6 @@ public class Consultation implements Serializable{
 	 */
 	public void setPatient(Patient patient) {
 		this.patient = patient;
-	}
-
-	/**
-	 * @return the acts
-	 * @author:tony
-	 */
-	public List<Act> getActs() {
-		return acts;
-	}
-
-	/**
-	 * @param acts the acts to set
-	 */
-	public void setActs(List<Act> acts) {
-		this.acts = acts;
 	}
 
 	/**
