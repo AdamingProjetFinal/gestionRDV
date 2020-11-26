@@ -59,7 +59,7 @@ public interface Icontroller<O> {
 	 * 
 	 */
 	@GetMapping("/{id}")
-	Map<String, Object> find(@PathVariable("id")Long id);
+	Object find(@PathVariable("id")Long id);
 	
 	/**
 	 * 
