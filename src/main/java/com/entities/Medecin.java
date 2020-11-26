@@ -35,6 +35,9 @@ import lombok.ToString;
 @DiscriminatorValue(value = "MED")
 public class Medecin extends Utilisateur {
 
+	@Column(name = "PRIXCONSULTATION")
+	private double prixConsultation;
+	
 	@Column(name = "N°PUBLIC")
 	private String codePublic;
 	
