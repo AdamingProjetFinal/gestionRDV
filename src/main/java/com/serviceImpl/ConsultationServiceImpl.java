@@ -45,7 +45,7 @@ public class ConsultationServiceImpl implements ConsultationService {
 		Double taxe =  admminConsommateur.getFormules().stream().sorted(Comparator.comparing(FormuleDTO::getId).reversed()).findFirst().get().getTaxe(); // Récupération de la dernière taxe
 		if (cons.getId() != null) { // Vérification si c'est une mise à jour de la consultation ou ... 
 			if (Boolean.compare( find( cons.getId() ).isValidationMedecin() , cons.isValidationMedecin() ) < 0) { // false true => -1 , true false => 1 , true true / false false => 0
-				ComptabiliteDTO compta = new ComptabiliteDTO(null, cons.getId(), (cons.getPrixTTC() * taxe /100) / (1 + taxe / 100) , (cons.getPrixTTC() * taxe/100) / (1 + taxe/100), ZonedDateTime.now());
+				ComptabiliteDTO compta = new ComptabiliteDTO(null, cons.getId(), (cons.getPrixTTC() * taxe /100) / (1 + taxe / 100) , (cons.getPrixTTC() * taxe/100) / (1 + taxe/100), cons.getDate());
 				admminConsommateur.payeConsultation(compta);
 			}; 
 			

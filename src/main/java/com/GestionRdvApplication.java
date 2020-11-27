@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
@@ -115,6 +116,16 @@ public class GestionRdvApplication {
 			Stream.of(c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16).forEach( item ->consultationService.saveOrUpdate( item ) );
 			Stream.of(5L,6L,7L,8L,9L,10L,11L,12L,13L).forEach(id -> {
 				Consultation consultation = consultationService.find(id);
+				consultation.setValidationMedecin(true);
+				consultationService.saveOrUpdate(consultation);
+			});
+			List<Consultation> listCons = new ArrayList<Consultation>();
+			for (int i = 0; i < 100; i++) {
+				Consultation c = new Consultation(null, ZonedDateTime.of(LocalDate.of(2020, (i%12) + 1, (i%28) + 1), LocalTime.of(11, 00), ZoneId.of("Europe/Paris") ), "pas bien", false, false, 60, 0, m1, p2);
+				listCons.add(c);
+			}
+			listCons.stream().forEach(cons->{
+				Consultation consultation = consultationService.saveOrUpdate( cons );
 				consultation.setValidationMedecin(true);
 				consultationService.saveOrUpdate(consultation);
 			});
