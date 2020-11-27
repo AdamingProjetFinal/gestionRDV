@@ -3,28 +3,31 @@
  */
 package com.serviceImpl;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.entities.Act;
-import com.repository.ActRepository;
-import com.service.ActService;
+import com.entities.Specialite;
+import com.repository.DaoRepository;
+import com.repository.SpecialiteRepository;
+import com.service.SpecialiteService;
 
 /**
  * @author Tony
  *
  */
 @Service
-public class ActServiceImpl implements ActService {
+public class SpecialiteServiceImpl implements SpecialiteService {
+
 	@Autowired
-	ActRepository dao;
+	SpecialiteRepository dao;
 	
 	@Override
-	public Act saveOrUpdate(Act act) {
+	public Specialite saveOrUpdate(Specialite specialite) {
 		
-		return dao.save(act);
+		return dao.save(specialite);
 	}
 
 	@Override
@@ -34,13 +37,13 @@ public class ActServiceImpl implements ActService {
 	}
 
 	@Override
-	public Act find(Long id) {
+	public Specialite find(Long id) {
 		// TODO Auto-generated method stub
 		return dao.findById(id).get();
 	}
 
 	@Override
-	public List<Act> findAll() {
+	public List<Specialite> findAll() {
 		// TODO Auto-generated method stub
 		return dao.findAll();
 	}

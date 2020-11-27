@@ -16,6 +16,7 @@ import com.entities.Role;
 @RestController
 @RequestMapping("/role")
 @CrossOrigin(origins = "*")
-public class RoleController extends ControllerImpl<Role>{
+public class RoleController{
 
+	
 }

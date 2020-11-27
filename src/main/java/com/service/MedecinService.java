@@ -13,10 +13,14 @@ import com.entities.Patient;
  * @author Tony
  *
  */
-public interface MedecinService extends DaoService<Medecin> {
+public interface MedecinService {
 
 	public Medecin findMedecinByEmail(String email);
 	
 	public List<Patient> findAllPatients(Long id);
+	Medecin saveOrUpdate(Medecin medecin);
+	void delete(Long id);
+	Medecin find (Long id);
+	List<Medecin>findAll();
 
 }

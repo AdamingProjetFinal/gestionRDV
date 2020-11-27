@@ -15,7 +15,6 @@ import com.entities.Medecin;
 import com.entities.Patient;
 import com.repository.ConsultationRepository;
 import com.repository.MedecinRepository;
-import com.repository.PatientRepository;
 import com.service.MedecinService;
 
 /**
@@ -23,7 +22,7 @@ import com.service.MedecinService;
  *
  */
 @Service
-public class MedecinServiceImpl  extends DaoServiceImpl<Medecin> implements MedecinService{
+public class MedecinServiceImpl  implements MedecinService{
 
 	@Autowired
 	MedecinRepository dao;
@@ -48,4 +47,27 @@ public class MedecinServiceImpl  extends DaoServiceImpl<Medecin> implements Mede
 				.collect(Collectors.toList());
 	}
 
+	@Override
+	public Medecin saveOrUpdate(Medecin medecin) {
+		
+		return dao.save(medecin);
+	}
+
+	@Override
+	public void delete(Long id) {
+	dao.deleteById(id);
+		
+	}
+
+	@Override
+	public Medecin find(Long id) {
+		// TODO Auto-generated method stub
+		return dao.findById(id).get();
+	}
+
+	@Override
+	public List<Medecin> findAll() {
+		// TODO Auto-generated method stub
+		return dao.findAll();
+	}
 }

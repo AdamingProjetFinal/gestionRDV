@@ -17,7 +17,7 @@ import com.service.FicheMedicaleService;
  *
  */
 @Service
-public class FicheMedicaleServiceImpl extends DaoServiceImpl<FicheMedicale> implements FicheMedicaleService{
+public class FicheMedicaleServiceImpl implements FicheMedicaleService{
 
 	@Autowired
 	FicheMedicaleRepository dao;
@@ -26,5 +26,28 @@ public class FicheMedicaleServiceImpl extends DaoServiceImpl<FicheMedicale> impl
 	public List<FicheMedicale> findByIdPatient(Long id) {
 		return dao.getFicheMedicaleByIdPatient(id);
 	}
+	
+	@Override
+	public FicheMedicale saveOrUpdate(FicheMedicale ficheMedicale) {
+		
+		return dao.save(ficheMedicale);
+	}
 
+	@Override
+	public void delete(Long id) {
+	dao.deleteById(id);
+		
+	}
+
+	@Override
+	public FicheMedicale find(Long id) {
+		// TODO Auto-generated method stub
+		return dao.findById(id).get();
+	}
+
+	@Override
+	public List<FicheMedicale> findAll() {
+		// TODO Auto-generated method stub
+		return dao.findAll();
+	}
 }

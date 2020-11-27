@@ -182,6 +182,20 @@ public class Consultation implements Serializable{
 	public void setDureeConsultation(int dureeConsultation) {
 		this.dureeConsultation = dureeConsultation;
 	}
+
+	/**
+	 * @return the prixTTC
+	 */
+	public double getPrixTTC() {
+		return prixTTC;
+	}
+
+	/**
+	 * @param prixTTC the prixTTC to set
+	 */
+	public void setPrixTTC(double prixTTC) {
+		this.prixTTC = prixTTC;
+	}
 	
 	
 	
